@@ -1,0 +1,27 @@
+.main {
+  width:80%;
+  margin: 30px auto;
+}
+.todo-table {
+  display:table;
+  width: 100%;
+  margin: auto;
+}
+.todo-table-row {
+  display: table-row;
+}
+.todo-table-cell {
+  display:table-cell;
+  padding: 10px;
+  width:50%;
+  &:first-child {
+    padding-left:0;
+  }
+  &:last-child {
+    padding-right:0;
+  }
+}
+
+.finished-list LI {
+  text-decoration: line-through;
+}

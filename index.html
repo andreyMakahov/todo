@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Todo es6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="build/style.css"/>
+</head>
+<body>
+
+    <div class="main">
+
+        <input type="text" class="form-control js-add-todo" placeholder="Todo ...">
+
+        <div class="todo-table">
+            <div class="todo-table-row">
+                <div class="todo-table-cell">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Me to do ...</div>
+                        <div class="panel-body">
+                            <ul class="list-group js-todo-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="todo-table-cell">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Finished</div>
+                        <div class="panel-body js-todo-drop-panel">
+                            <ul class="list-group js-finished-list finished-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trash"></div>
+
+    </div>
+
+
+    <script src="build/main.js" charset="utf-8"></script>
+</body>
+</html>
