@@ -25,3 +25,7 @@
 .finished-list LI {
   text-decoration: line-through;
 }
+.list-group {
+  overflow: auto;
+  height: 400px;
+}
