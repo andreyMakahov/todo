@@ -25,12 +25,20 @@ gulp.task('scripts', function() {
                 loaders: [{
                     test: /\.js$/,
                     exclude: /node_modules/,
-                    loader: 'babel-loader',
+                    loader: 'babel',
                     query: {
                         plugins: ['transform-runtime'],
                         presets: ['es2015']
                     }
                 }]
+            },
+
+            resolve: {
+                modulesDirectories: ["/usr/lib/node_modules", "node_modules"]
+            },
+
+            resolveLoader: {
+                modulesDirectories: ["/usr/lib/node_modules", "node_modules"]
             },
 
             //enable source maps

@@ -36,11 +36,13 @@ class TodoList extends List {
     }
 
     initGlobalEvents() {
-        let panelEl = document.querySelector('.js-todo-drop-panel');
+        let finishedPanelEl = document.querySelector('.js-finished-panel');
+        let todoPanelEl = document.querySelector('.js-todo-panel');
+        let trashPanelEl =  document.querySelector('.js-trash-panel');
 
         var _this = this;
 
-        panelEl.addEventListener("drop", event => {
+        finishedPanelEl.addEventListener("drop", event => {
             var id = parseInt(event.dataTransfer.getData("Text"), 10);
             _this.change(id, {
                 done: true
@@ -49,8 +51,26 @@ class TodoList extends List {
             _this.render();
         });
 
-        panelEl.addEventListener("dragover", function(event) {
-            event.preventDefault();
+        todoPanelEl.addEventListener("drop", event => {
+            var id = parseInt(event.dataTransfer.getData("Text"), 10);
+            _this.change(id, {
+                done: false
+            });
+            _this.save();
+            _this.render();
+        });
+
+        trashPanelEl.addEventListener("drop", event => {
+            var id = parseInt(event.dataTransfer.getData("Text"), 10);
+            _this.remove(id);
+            _this.save();
+            _this.render();
+        });
+
+        [finishedPanelEl, todoPanelEl, trashPanelEl].forEach((panel) => {
+            panel.addEventListener("dragover", (event) => {
+                event.preventDefault();
+            });
         });
     }
 

@@ -11,8 +11,10 @@ class List {
         this.save();
     }
 
-    remove(item) {
-        this.list.push(item);
+    remove(id) {
+        this.list = this.list.filter((todo) => {
+            return todo.id !== id;
+        })
     }
 
     getById(id) {
